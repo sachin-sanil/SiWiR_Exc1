@@ -20,7 +20,7 @@ void multiply(matrix& A, matrix& B, matrix& C)
     
     
     assert((A.cols == B.rows) && (A.rows == C.rows) && (B.cols == C.cols));
-    int b = 4;
+    int b = 32;
     if (!(A.cols == A.rows && B.rows == B.cols && A.cols%b==0))
         b = 1;
     

@@ -12,6 +12,8 @@ using namespace std;
 class matrix
 {
 
+    private:
+	int pad=80;
 
     public:
     std::vector<double> data;
@@ -20,7 +22,7 @@ class matrix
     double& operator() (const int &i, const int &j)
     {
         assert((i > 0) && (i <= rows) && (j > 0) && (j <= rows));
-        return data[(i-1)*cols+j-1];
+        return data[(i-1)*(cols+pad)+j-1];
     }
     friend void read(std::string file_name, matrix &M);
     friend void multiply(matrix& A, matrix& B, matrix& C);
@@ -28,7 +30,7 @@ class matrix
     int get_rows(){return rows;}
     int get_cols(){return cols;}
     matrix() = default;
-    matrix(int i, int j):rows(i), cols(j){data.resize(rows*cols);}
+    matrix(int i, int j):rows(i), cols(j){data.resize(rows*(cols+pad));}
     void reset(){fill(data.begin(), data.end(), 0);};
 
 
@@ -40,12 +42,16 @@ class matrix
 	//read the file and get the data in a temporary variable
 	ifstream file(file_name);
 	file >> M.rows; file >> M.cols;
-     M.data.resize(M.rows*M.cols);
+     M.data.resize((M.rows)*(M.cols+M.pad));
     int i = 0;
     while (!file.eof())
     {
+	
+	for (auto j=0; j != M.rows; ++j){
         file >> M.data[i];
         ++i;
+	}
+	i+=M.pad;
     }
 
     file.close();

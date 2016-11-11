@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CORE="1"
+CORE="4"
 PROGRAM="main"
 echo Profiling program $PROGRAM on core $CORE
 
