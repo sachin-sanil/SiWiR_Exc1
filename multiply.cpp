@@ -1,9 +1,10 @@
 #include <iostream>
 #include <vector>
 
-void multiply(matrix& A, matrix& B, matrix& C)
+void naivemult(matrix& A, matrix& B, matrix& C)
 {
-    /*
+
+    
     assert((A.cols == B.rows) && (A.rows == C.rows) && (B.cols == C.cols));
     int p = A.rows;
     int q = A.cols;
@@ -16,7 +17,14 @@ void multiply(matrix& A, matrix& B, matrix& C)
 
     }
     }
-    } */
+    }
+    
+}
+
+
+void multiply(matrix& A, matrix& B, matrix& C)
+{
+  
     
     
     assert((A.cols == B.rows) && (A.rows == C.rows) && (B.cols == C.cols));
@@ -38,3 +46,7 @@ void multiply(matrix& A, matrix& B, matrix& C)
         }
         
 }
+
+
+    
+  

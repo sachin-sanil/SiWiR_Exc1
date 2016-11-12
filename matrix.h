@@ -13,7 +13,7 @@ class matrix
 {
 
     private:
-	int pad=80;
+	int pad=48;
 
     public:
     std::vector<double> data;
@@ -42,19 +42,35 @@ class matrix
 	//read the file and get the data in a temporary variable
 	ifstream file(file_name);
 	file >> M.rows; file >> M.cols;
-     M.data.resize((M.rows)*(M.cols+M.pad));
-    int i = 0;
-    while (!file.eof())
-    {
+    	M.data.resize((M.rows)*(M.cols+M.pad));
+    	int i = 0;
+    	while (!file.eof())
+    	{
 	
-	for (auto j=0; j != M.rows; ++j){
-        file >> M.data[i];
-        ++i;
-	}
+		for (auto j=0; j != M.rows; ++j){
+        	file >> M.data[i];
+        	++i;
+		}
 	i+=M.pad;
-    }
+    	}	
 
-    file.close();
+    	file.close();
+}
+
+
+void readwp(std::string file_name, matrix &M)
+{
+	ifstream file(file_name);
+	file>> M.rows; file>> M.cols;
+	M.data.resize((M.rows)*(M.cols));
+	int i =0;
+	while(!file.eof())
+	{
+	file >> M.data[i];
+	++i;
+	}
+
+	file.close();
 }
 
 void write(std::string file_name, matrix &M)
