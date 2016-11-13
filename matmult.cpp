@@ -28,6 +28,9 @@ int main(int argc, char *argv[])
     double time_n=100, time_o=100, time_blas=100;
 
     matrix C(A.get_rows(), B.get_cols());
+#ifdef USE_LIKWID
+   likwid_markerInit();
+   likwid_markerStartRegion("Naive");
 #endif
         siwir::Timer timer;
         timer.reset();
