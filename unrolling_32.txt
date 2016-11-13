@@ -1,0 +1,327 @@
+Profiling program matmult on core 5
+================================================================================
+
+Measuring performance for event group FLOPS_DP using the marker api...
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) CPU E3-1275 v5 @ 3.60GHz
+CPU type:	Intel Skylake processor
+CPU clock:	3.60 GHz
+--------------------------------------------------------------------------------
+4
+size 32 time_unrolling6.0672e-05	size 32 time-blocking 5.2616e-05
+size 32 time-blas 3.7364e-05
+--------------------------------------------------------------------------------
+Region Unrolling, Group 1: FLOPS_DP
++-------------------+----------+
+|    Region Info    |  Core 5  |
++-------------------+----------+
+| RDTSC Runtime [s] | 0.000066 |
+|     call count    |     1    |
++-------------------+----------+
+
++------------------------------------------+---------+--------+
+|                   Event                  | Counter | Core 5 |
++------------------------------------------+---------+--------+
+|             INSTR_RETIRED_ANY            |  FIXC0  | 302498 |
+|           CPU_CLK_UNHALTED_CORE          |  FIXC1  | 252020 |
+|           CPU_CLK_UNHALTED_REF           |  FIXC2  | 245550 |
+| FP_ARITH_INST_RETIRED_128B_PACKED_DOUBLE |   PMC0  |    0   |
+|    FP_ARITH_INST_RETIRED_SCALAR_DOUBLE   |   PMC1  |  65553 |
+| FP_ARITH_INST_RETIRED_256B_PACKED_DOUBLE |   PMC2  |    0   |
++------------------------------------------+---------+--------+
+
++----------------------+-----------+
+|        Metric        |   Core 5  |
++----------------------+-----------+
+|  Runtime (RDTSC) [s] |   0.0001  |
+| Runtime unhalted [s] |   0.0001  |
+|      Clock [MHz]     | 3694.8462 |
+|          CPI         |   0.8331  |
+|        MFLOP/s       |  996.8484 |
+|      AVX MFLOP/s     |     0     |
+|    Packed MUOPS/s    |     0     |
+|    Scalar MUOPS/s    |  996.8484 |
++----------------------+-----------+
+
+Region Complete, Group 1: FLOPS_DP
++-------------------+----------+
+|    Region Info    |  Core 5  |
++-------------------+----------+
+| RDTSC Runtime [s] | 0.000053 |
+|     call count    |     1    |
++-------------------+----------+
+
++------------------------------------------+---------+--------+
+|                   Event                  | Counter | Core 5 |
++------------------------------------------+---------+--------+
+|             INSTR_RETIRED_ANY            |  FIXC0  | 276894 |
+|           CPU_CLK_UNHALTED_CORE          |  FIXC1  | 210190 |
+|           CPU_CLK_UNHALTED_REF           |  FIXC2  | 205350 |
+| FP_ARITH_INST_RETIRED_128B_PACKED_DOUBLE |   PMC0  |    0   |
+|    FP_ARITH_INST_RETIRED_SCALAR_DOUBLE   |   PMC1  |  65553 |
+| FP_ARITH_INST_RETIRED_256B_PACKED_DOUBLE |   PMC2  |    0   |
++------------------------------------------+---------+--------+
+
++----------------------+-----------+
+|        Metric        |   Core 5  |
++----------------------+-----------+
+|  Runtime (RDTSC) [s] |   0.0001  |
+| Runtime unhalted [s] |   0.0001  |
+|      Clock [MHz]     | 3684.8400 |
+|          CPI         |   0.7591  |
+|        MFLOP/s       | 1238.7401 |
+|      AVX MFLOP/s     |     0     |
+|    Packed MUOPS/s    |     0     |
+|    Scalar MUOPS/s    | 1238.7401 |
++----------------------+-----------+
+
+Region BLAS, Group 1: FLOPS_DP
++-------------------+----------+
+|    Region Info    |  Core 5  |
++-------------------+----------+
+| RDTSC Runtime [s] | 0.000038 |
+|     call count    |     1    |
++-------------------+----------+
+
++------------------------------------------+---------+--------+
+|                   Event                  | Counter | Core 5 |
++------------------------------------------+---------+--------+
+|             INSTR_RETIRED_ANY            |  FIXC0  | 132174 |
+|           CPU_CLK_UNHALTED_CORE          |  FIXC1  | 111286 |
+|           CPU_CLK_UNHALTED_REF           |  FIXC2  | 108750 |
+| FP_ARITH_INST_RETIRED_128B_PACKED_DOUBLE |   PMC0  |    0   |
+|    FP_ARITH_INST_RETIRED_SCALAR_DOUBLE   |   PMC1  |  67603 |
+| FP_ARITH_INST_RETIRED_256B_PACKED_DOUBLE |   PMC2  |    0   |
++------------------------------------------+---------+--------+
+
++----------------------+--------------+
+|        Metric        |    Core 5    |
++----------------------+--------------+
+|  Runtime (RDTSC) [s] | 3.757014e-05 |
+| Runtime unhalted [s] | 3.091286e-05 |
+|      Clock [MHz]     |   3683.9401  |
+|          CPI         |    0.8420    |
+|        MFLOP/s       |   1799.3811  |
+|      AVX MFLOP/s     |       0      |
+|    Packed MUOPS/s    |       0      |
+|    Scalar MUOPS/s    |   1799.3811  |
++----------------------+--------------+
+
+================================================================================
+
+Measuring performance for event group L2 using the marker api...
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) CPU E3-1275 v5 @ 3.60GHz
+CPU type:	Intel Skylake processor
+CPU clock:	3.60 GHz
+--------------------------------------------------------------------------------
+4
+size 32 time_unrolling5.7641e-05	size 32 time-blocking 5.0336e-05
+size 32 time-blas 3.9773e-05
+--------------------------------------------------------------------------------
+Region Unrolling, Group 1: L2
++-------------------+----------+
+|    Region Info    |  Core 5  |
++-------------------+----------+
+| RDTSC Runtime [s] | 0.000062 |
+|     call count    |     1    |
++-------------------+----------+
+
++-----------------------+---------+--------+
+|         Event         | Counter | Core 5 |
++-----------------------+---------+--------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 302590 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  | 239866 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  | 234450 |
+|    L1D_REPLACEMENT    |   PMC0  |  1429  |
+|      L1D_M_EVICT      |   PMC1  |   379  |
+| ICACHE_64B_IFTAG_MISS |   PMC2  |   750  |
++-----------------------+---------+--------+
+
++--------------------------------+--------------+
+|             Metric             |    Core 5    |
++--------------------------------+--------------+
+|       Runtime (RDTSC) [s]      |    0.0001    |
+|      Runtime unhalted [s]      |    0.0001    |
+|           Clock [MHz]          |   3683.1525  |
+|               CPI              |    0.7927    |
+|  L2D load bandwidth [MBytes/s] |   1474.7523  |
+|  L2D load data volume [GBytes] |    0.0001    |
+| L2D evict bandwidth [MBytes/s] |   391.1345   |
+| L2D evict data volume [GBytes] | 2.425600e-05 |
+|     L2 bandwidth [MBytes/s]    |   2639.8996  |
+|     L2 data volume [GBytes]    |    0.0002    |
++--------------------------------+--------------+
+
+Region Complete, Group 1: L2
++-------------------+----------+
+|    Region Info    |  Core 5  |
++-------------------+----------+
+| RDTSC Runtime [s] | 0.000051 |
+|     call count    |     1    |
++-------------------+----------+
+
++-----------------------+---------+--------+
+|         Event         | Counter | Core 5 |
++-----------------------+---------+--------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 276999 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  | 202694 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  | 197700 |
+|    L1D_REPLACEMENT    |   PMC0  |  1052  |
+|      L1D_M_EVICT      |   PMC1  |   308  |
+| ICACHE_64B_IFTAG_MISS |   PMC2  |   632  |
++-----------------------+---------+--------+
+
++--------------------------------+--------------+
+|             Metric             |    Core 5    |
++--------------------------------+--------------+
+|       Runtime (RDTSC) [s]      |    0.0001    |
+|      Runtime unhalted [s]      |    0.0001    |
+|           Clock [MHz]          |   3690.9271  |
+|               CPI              |    0.7317    |
+|  L2D load bandwidth [MBytes/s] |   1330.7675  |
+|  L2D load data volume [GBytes] |    0.0001    |
+| L2D evict bandwidth [MBytes/s] |   389.6163   |
+| L2D evict data volume [GBytes] | 1.971200e-05 |
+|     L2 bandwidth [MBytes/s]    |   2519.8564  |
+|     L2 data volume [GBytes]    |    0.0001    |
++--------------------------------+--------------+
+
+Region BLAS, Group 1: L2
++-------------------+----------+
+|    Region Info    |  Core 5  |
++-------------------+----------+
+| RDTSC Runtime [s] | 0.000040 |
+|     call count    |     1    |
++-------------------+----------+
+
++-----------------------+---------+--------+
+|         Event         | Counter | Core 5 |
++-----------------------+---------+--------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 132191 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  | 111661 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  | 108750 |
+|    L1D_REPLACEMENT    |   PMC0  |  1172  |
+|      L1D_M_EVICT      |   PMC1  |   402  |
+| ICACHE_64B_IFTAG_MISS |   PMC2  |  1028  |
++-----------------------+---------+--------+
+
++--------------------------------+--------------+
+|             Metric             |    Core 5    |
++--------------------------------+--------------+
+|       Runtime (RDTSC) [s]      | 4.000391e-05 |
+|      Runtime unhalted [s]      | 3.101703e-05 |
+|           Clock [MHz]          |   3696.3535  |
+|               CPI              |    0.8447    |
+|  L2D load bandwidth [MBytes/s] |   1875.0167  |
+|  L2D load data volume [GBytes] |    0.0001    |
+| L2D evict bandwidth [MBytes/s] |   643.1371   |
+| L2D evict data volume [GBytes] | 2.572800e-05 |
+|     L2 bandwidth [MBytes/s]    |   4162.7931  |
+|     L2 data volume [GBytes]    |    0.0002    |
++--------------------------------+--------------+
+
+================================================================================
+
+Measuring performance for event group L2CACHE using the marker api...
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) CPU E3-1275 v5 @ 3.60GHz
+CPU type:	Intel Skylake processor
+CPU clock:	3.60 GHz
+--------------------------------------------------------------------------------
+4
+size 32 time_unrolling5.4434e-05	size 32 time-blocking 5.156e-05
+size 32 time-blas 4.2303e-05
+--------------------------------------------------------------------------------
+Region Unrolling, Group 1: L2CACHE
++-------------------+----------+
+|    Region Info    |  Core 5  |
++-------------------+----------+
+| RDTSC Runtime [s] | 0.000059 |
+|     call count    |     1    |
++-------------------+----------+
+
++-----------------------+---------+--------+
+|         Event         | Counter | Core 5 |
++-----------------------+---------+--------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 302149 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  | 223958 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  | 218100 |
+| L2_TRANS_ALL_REQUESTS |   PMC0  |  6391  |
+|     L2_RQSTS_MISS     |   PMC1  |  2033  |
++-----------------------+---------+--------+
+
++----------------------+-----------+
+|        Metric        |   Core 5  |
++----------------------+-----------+
+|  Runtime (RDTSC) [s] |   0.0001  |
+| Runtime unhalted [s] |   0.0001  |
+|      Clock [MHz]     | 3696.6640 |
+|          CPI         |   0.7412  |
+|    L2 request rate   |   0.0212  |
+|     L2 miss rate     |   0.0067  |
+|     L2 miss ratio    |   0.3181  |
++----------------------+-----------+
+
+Region Complete, Group 1: L2CACHE
++-------------------+----------+
+|    Region Info    |  Core 5  |
++-------------------+----------+
+| RDTSC Runtime [s] | 0.000052 |
+|     call count    |     1    |
++-------------------+----------+
+
++-----------------------+---------+--------+
+|         Event         | Counter | Core 5 |
++-----------------------+---------+--------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 276460 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  | 210736 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  | 205650 |
+| L2_TRANS_ALL_REQUESTS |   PMC0  |  4915  |
+|     L2_RQSTS_MISS     |   PMC1  |  1692  |
++-----------------------+---------+--------+
+
++----------------------+-----------+
+|        Metric        |   Core 5  |
++----------------------+-----------+
+|  Runtime (RDTSC) [s] |   0.0001  |
+| Runtime unhalted [s] |   0.0001  |
+|      Clock [MHz]     | 3689.0037 |
+|          CPI         |   0.7623  |
+|    L2 request rate   |   0.0178  |
+|     L2 miss rate     |   0.0061  |
+|     L2 miss ratio    |   0.3443  |
++----------------------+-----------+
+
+Region BLAS, Group 1: L2CACHE
++-------------------+----------+
+|    Region Info    |  Core 5  |
++-------------------+----------+
+| RDTSC Runtime [s] | 0.000043 |
+|     call count    |     1    |
++-------------------+----------+
+
++-----------------------+---------+--------+
+|         Event         | Counter | Core 5 |
++-----------------------+---------+--------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 131762 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  | 112688 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  | 109950 |
+| L2_TRANS_ALL_REQUESTS |   PMC0  |  6336  |
+|     L2_RQSTS_MISS     |   PMC1  |  2061  |
++-----------------------+---------+--------+
+
++----------------------+--------------+
+|        Metric        |    Core 5    |
++----------------------+--------------+
+|  Runtime (RDTSC) [s] | 4.254843e-05 |
+| Runtime unhalted [s] | 3.130247e-05 |
+|      Clock [MHz]     |   3689.6189  |
+|          CPI         |    0.8552    |
+|    L2 request rate   |    0.0481    |
+|     L2 miss rate     |    0.0156    |
+|     L2 miss ratio    |    0.3253    |
++----------------------+--------------+
+
+================================================================================
+

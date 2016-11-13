@@ -1,7 +1,7 @@
 #!/bin/bash
 
-CORE="4"
-PROGRAM="main"
+CORE="5"
+PROGRAM="matmult"
 echo Profiling program $PROGRAM on core $CORE
 
 echo ================================================================================
@@ -12,7 +12,7 @@ do
 	echo Measuring performance for event group $i \
 	     using the marker api...
 
-	likwid-perfctr -C $CORE -g $i -m ./$PROGRAM 
+	likwid-perfctr -C $CORE -g $i -m ./$PROGRAM A.in B.in C.out
 
 	echo ================================================================================
 	echo

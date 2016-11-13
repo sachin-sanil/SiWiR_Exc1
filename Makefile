@@ -16,7 +16,7 @@ INCLUDES += -I/usr/local/likwid/include/
 LDFLAGS += -L/usr/local/likwid/lib/
 LIBS += -llikwid
 
-TARGET = main
+TARGET = matmult
 OBJS = $(TARGET).o
 
 all: $(TARGET)
